@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main()
+{
+    int i;
+    float expense[30], total = 0, average;
+
+    for(i = 0; i < 30; i++)
+    {
+        printf("Enter expense for day %d: ", i + 1);
+        scanf("%f", &expense[i]);
+        total = total + expense[i];
+    }
+
+    average = total / 30;
+
+    printf("\nTotal Monthly Expense = %.2f\n", total);
+    printf("Average Daily Expense = %.2f", average);
+
+    return 0;
+}
