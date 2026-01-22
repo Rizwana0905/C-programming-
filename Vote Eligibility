@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+    int birthDay, birthMonth, birthYear;
+    int currentDay, currentMonth, currentYear;
+    int age;
+
+    printf("Enter your date of birth (DD MM YYYY): ");
+    scanf("%d %d %d", &birthDay, &birthMonth, &birthYear);
+
+    printf("Enter current date (DD MM YYYY): ");
+    scanf("%d %d %d", &currentDay, &currentMonth, &currentYear);
+
+    age = currentYear - birthYear;
+
+    if(currentMonth < birthMonth || (currentMonth == birthMonth && currentDay < birthDay))
+        age--;  // Birthday not yet occurred this year
+
+    if(age >= 18)
+        printf("You are eligible to vote.\n");
+    else
+        printf("You are not eligible to vote.\n");
+
+    return 0;
+}
