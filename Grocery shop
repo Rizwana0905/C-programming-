@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, i, qty, treatment;
+    float price, itemTotal, bill = 0, discount, gst;
+
+    printf("Enter number of items: ");
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++)
+    {
+        printf("\nItem %d\n", i);
+
+        printf("Enter price: ");
+        scanf("%f", &price);
+
+        printf("Enter quantity: ");
+        scanf("%d", &qty);
+
+        itemTotal = price * qty;
+
+        printf("Treatment type\n");
+        printf("1. No treatment\n");
+        printf("2. Discount (10%%)\n");
+        printf("3. GST (5%%)\n");
+        printf("Enter choice: ");
+        scanf("%d", &treatment);
+
+        if(treatment == 2)
+        {
+            discount = itemTotal * 0.10;
+            itemTotal = itemTotal - discount;
+        }
+        else if(treatment == 3)
+        {
+            gst = itemTotal * 0.05;
+            itemTotal = itemTotal + gst;
+        }
+
+        bill = bill + itemTotal;
+    }
+
+    printf("\n----------------------------");
+    printf("\nTotal Bill Amount = Rs. %.2f", bill);
+    printf("\n----------------------------");
+
+    return 0;
+}
