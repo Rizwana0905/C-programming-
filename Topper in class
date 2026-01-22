@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, i, j;
+    int marks[50][5];
+    int total[50];
+    int topperIndex = 0;
+
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++)
+    {
+        total[i] = 0;
+        printf("\nEnter marks for student %d:\n", i + 1);
+        for(j = 0; j < 5; j++)
+        {
+            printf("Subject %d: ", j + 1);
+            scanf("%d", &marks[i][j]);
+            total[i] = total[i] + marks[i][j];
+        }
+    }
+
+    for(i = 1; i < n; i++)
+    {
+        if(total[i] > total[topperIndex])
+            topperIndex = i;
+    }
+
+    printf("\nTopper of the Class:\n");
+    printf("Student Number: %d\n", topperIndex + 1);
+    printf("Total Marks: %d\n", total[topperIndex]);
+
+    return 0;
+}
