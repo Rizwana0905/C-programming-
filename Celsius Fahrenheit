@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+    float celsius, fahrenheit;
+
+
+    printf("Enter temperature in Celsius for Kashmir: ");
+    scanf("%f", &celsius);
+
+    
+    fahrenheit = (celsius * 9 / 5) + 32;
+
+    
+    printf("\nPlace: Kashmir");
+    printf("\nTemperature in Celsius: %.2f", celsius);
+    printf("\nTemperature in Fahrenheit: %.2f", fahrenheit);
+
+    return 0;
+}
