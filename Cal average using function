@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+float calculateAverage(int n, float numbers[]) {
+    float sum = 0;
+    for(int i = 0; i < n; i++) {
+        sum += numbers[i];
+    }
+    return sum / n;
+}
+
+int main() {
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    float numbers[n], avg;
+
+    for(int i = 0; i < n; i++) {
+        printf("Enter number %d: ", i + 1);
+        scanf("%f", &numbers[i]);
+    }
+
+    avg = calculateAverage(n, numbers);
+
+    printf("Average: %.2f\n", avg);
+
+    return 0;
+}
